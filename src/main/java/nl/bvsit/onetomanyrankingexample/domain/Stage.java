@@ -8,6 +8,7 @@ public class Stage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "voyage_id", referencedColumnName = "id",
             foreignKey = @ForeignKey(name="fk_stage_voyage") )
