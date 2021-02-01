@@ -1,8 +1,7 @@
 package nl.bvsit.onetomanyrankingexample.domain;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Voyage {
@@ -11,10 +10,10 @@ public class Voyage {
     private Long id;
     private String name;
 
-    @OrderColumn(name="stage_index")
+    @OrderColumn
     @OneToMany(mappedBy="voyage",cascade = CascadeType.ALL ,orphanRemoval = true)
     //@OneToMany() //This creates a join table
-    private List<Stage> stages = new ArrayList<>();
+    private List<Stage> stages= new ArrayList<>();
 
     public Long getId() {
         return id;

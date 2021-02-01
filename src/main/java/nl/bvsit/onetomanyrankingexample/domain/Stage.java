@@ -10,8 +10,12 @@ public class Stage {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
+/*
+
     @JoinColumn(name = "voyage_id", referencedColumnName = "id",
             foreignKey = @ForeignKey(name="fk_stage_voyage") )
+*/
+    @JoinColumn(name = "voyage_id")
     Voyage voyage;
 
     public Long getId() {
@@ -29,7 +33,6 @@ public class Stage {
     public void setName(String name) {
         this.name = name;
     }
-
     public Voyage getVoyage() {
         return voyage;
     }
