@@ -14,6 +14,12 @@ public class Stage {
             foreignKey = @ForeignKey(name="fk_stage_voyage") )
     Voyage voyage;
 
+    private int stage_order;
+
+    public int getStage_order() {
+        return stage_order;
+    }
+
     public Long getId() {
         return id;
     }
