@@ -13,7 +13,7 @@ public class Voyage {
     @OrderColumn(name="stage_order")
     @OneToMany(mappedBy="voyage",cascade = CascadeType.ALL ,orphanRemoval = true)
     //@OneToMany() //This creates a join table
-    private List<Stage> stages= new ArrayList<>();
+    private Set<Stage> stages= new HashSet<>();
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Voyage {
         this.name = name;
     }
 
-    public List<Stage> getStages() {
+    public Set<Stage> getStages() {
         return stages;
     }
 
-    public void setStages(List<Stage> stages) {
+    public void setStages(Set<Stage> stages) {
         this.stages = stages;
     }
 }
