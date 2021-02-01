@@ -35,6 +35,17 @@ public class DatabaseFiller implements CommandLineRunner {
         saveStage("TLI",voyage);
         saveStage("LOI",voyage);
 
+        for (int i = 0; i < 5; i++) {
+            Voyage v = saveVoyage("vogage "+i);
+            for (int j = 0; j < 10; j++) {
+                saveStage("stage "+j,v);
+            }
+        }
+
+
+
+
+
     }
 
     public Voyage saveVoyage(String name) {
