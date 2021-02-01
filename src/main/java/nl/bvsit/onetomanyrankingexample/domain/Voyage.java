@@ -10,7 +10,7 @@ public class Voyage {
     private Long id;
     private String name;
 
-    @OrderColumn
+    @OrderColumn(name="stage_order")
     @OneToMany(mappedBy="voyage",cascade = CascadeType.ALL ,orphanRemoval = true)
     //@OneToMany() //This creates a join table
     private List<Stage> stages= new ArrayList<>();
