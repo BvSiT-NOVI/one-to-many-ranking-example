@@ -11,9 +11,9 @@ public class Voyage {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy="voyage"
-            ,cascade = CascadeType.ALL
-            ,orphanRemoval = true)
+    @OrderColumn(name="stage_index")
+    @OneToMany(mappedBy="voyage",cascade = CascadeType.ALL ,orphanRemoval = true)
+    //@OneToMany() //This creates a join table
     private List<Stage> stages = new ArrayList<>();
 
     public Long getId() {
